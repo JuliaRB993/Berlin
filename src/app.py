@@ -5,14 +5,19 @@ from ant_colony import AntColony
 
 def load_berlin52():
     coords = []
+    reading_coords = False
     with open("data/berlin52.tsp") as f:
         for line in f:
-            if line.strip().isdigit() or line.startswith("NODE_COORD_SECTION"):
+            line = line.strip()
+            if line == "NODE_COORD_SECTION":
+                reading_coords = True
                 continue
             if "EOF" in line:
                 break
-            parts = line.strip().split()
-            coords.append((float(parts[1]), float(parts[2])))
+            if reading_coords and line:
+                parts = line.split()
+                if len(parts) >= 3:
+                    coords.append((float(parts[1]), float(parts[2])))
     return coords
 
 def calc_dist_matrix(coords):
