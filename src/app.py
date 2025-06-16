@@ -63,4 +63,5 @@ def main():
             plot_path(coords, path, dist)
 
 if __name__ == "__main__":
+    main()":
     main()
