@@ -1,2 +1,2 @@
-# ACO TSP Berlin52
-Projekt z algorytmem mrówkowym do problemu komiwojażera.
+# ACO TSP Berlin52 (wersja webowa)
+Uruchom za pomocą `streamlit run src/app.py`
